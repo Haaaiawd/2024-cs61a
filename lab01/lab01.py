@@ -116,7 +116,17 @@ def double_eights(n):
     False
     """
     a = 0
+    found = False
     for i in str(n):
-        if i == 8:
+        if i == "8":
             a += 1
-    if a 
+        else:
+            a = 0
+        if a == 2:
+            found = True
+            break
+    if found:
+        return True
+    else:
+        return False
+    

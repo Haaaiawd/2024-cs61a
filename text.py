@@ -18,3 +18,4 @@ a,b,c = 2,6,5
 assert middle(a,b,c) == 5, "haha,代码写错了555"
 
 ##可以打出python -m doctest -v text.py来用>>>里的公式检查。
+##要在cmd里打这个代码，而且文件要确切到该文件夹，不能隔着文件夹。
