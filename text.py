@@ -16,3 +16,5 @@ def middle(a, b, c):
     return sorted([a,b,c])[1]
 a,b,c = 2,6,5
 assert middle(a,b,c) == 5, "haha,代码写错了555"
+
+##可以打出python -m doctest -v text.py来用>>>里的公式检查。
