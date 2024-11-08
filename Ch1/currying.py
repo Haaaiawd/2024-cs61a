@@ -1,5 +1,6 @@
 def curried_pow(x):
     def h(y):
+        ##这里设了一个新的y，因此使用时就有两个参数了
         return pow(x, y)
     return h
 ##相当于f(x)成了底为x,指数为y的函数，并可以使用函数格式表达
