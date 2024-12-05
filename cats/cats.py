@@ -342,9 +342,12 @@ def report_progress(typed, source, user_id, upload):
     "*** YOUR CODE HERE ***"
     for i in list(range(len(typed))):
         if typed[i] != source[i]:
-            progress = (i) / len(source)
+            progress = i / len(source)
             upload({'id': user_id, 'progress': progress})
             return progress
+    progress = len(typed) / len(source)
+    upload({'id': user_id, 'progress': progress})
+    return progress
 
         
     # END PROBLEM 8
@@ -370,7 +373,12 @@ def time_per_word(words, timestamps_per_player):
     """
     tpp = timestamps_per_player  # A shorter name (for convenience)
     # BEGIN PROBLEM 9
-    times = []  # You may remove this line
+    times = [[] for _ in range(len(tpp))]  # You may remove this line
+    for i in range(len(tpp)):
+        for j in range(len(tpp[i]) - 1):
+            if j + 1 <= len(tpp[i]):
+                    times[i].append(tpp[i][j+1] - tpp[i][j])    
+  # You may remove this line
     # END PROBLEM 9
     return {'words': words, 'times': times}
 
@@ -398,6 +406,14 @@ def fastest_words(words_and_times):
     word_indices = range(len(words))    # contains an *index* for each word
     # BEGIN PROBLEM 10
     "*** YOUR CODE HERE ***"
+    fastest_players = [[] for _ in player_indices]
+    for i in word_indices:
+        min_time = min(get_time(times, k, i) for k in player_indices)
+        for j in player_indices:
+            if get_time(times, j, i) == min_time:
+                fastest_players[j].append(words[i])
+                break
+    return fastest_players 
     # END PROBLEM 10
 
 
