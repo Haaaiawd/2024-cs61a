@@ -66,13 +66,17 @@ def find_path(t, x):
     if x == label(t):
         return [x]
     else:
+        paths = []
         if not branches(t):
             return None
         for branch in branches(t):
             subpath = find_path(branch, x)
             if subpath:
-                return [label(t)] + subpath
+                paths.append([label(t)] + subpath)
             ##检测第一次出现None就让程序None,这样就不会让None去相加了
+        if paths:
+            return min(paths , key=len)
+        else:
             return None
         
         
