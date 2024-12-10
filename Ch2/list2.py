@@ -1,9 +1,9 @@
 chinese = ['coin', 'string', 'myriad']  # A list literal
 suits = chinese                         # Two names refer to the same list
 
-suits.pop()             # Remove and return the final element
+suits.pop()             # Remove and return the final element（pop里面是索引）
 'myriad'
-suits.remove('string')  # Remove the first element that equals the argument
+suits.remove('string')  # Remove the first element that equals the argument(String是被移出的元素)
 
 suits.append('cup')              # Add an element to the end
 suits.extend(['sword', 'club'])  # Add all elements of a sequence to the end
