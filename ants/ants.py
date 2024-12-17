@@ -151,6 +151,8 @@ class HarvesterAnt(Ant):
         """
         # BEGIN Problem 1
         "*** YOUR CODE HERE ***"
+        food_cost = self.food_cost
+        gamestate.colony.food += food_cost
         # END Problem 1
 
 
