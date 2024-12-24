@@ -7,4 +7,4 @@ def draw(hand, positions):
     >>> hand
     ['A', 'J', 9]
     """
-    return list(reversed( [hand.pop(i) for i in reversed(sorted(positions))] ))
+    return list(reversed([hand.pop(i) for i in reversed(sorted(positions))]))
